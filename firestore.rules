@@ -1,0 +1,110 @@
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ------------------------------------------------------------------------
+    // Helper Functions
+    // ------------------------------------------------------------------------
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function getOwnerClaim() {
+        return request.auth.token.owner == true;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (request.auth.token.admin == true || getOwnerClaim());
+    }
+    
+    // ------------------------------------------------------------------------
+    // Public Content Rules (Locations, Events) - Simplified Access
+    // ------------------------------------------------------------------------
+    match /locations/{locationId} {
+      allow read: if true;
+      // Any signed-in user can create, update, or delete any location.
+      allow write: if isSignedIn();
+    }
+
+    match /events/{eventId} {
+      allow read: if true;
+      // Any signed-in user can create, update, or delete any event.
+      allow write: if isSignedIn();
+    }
+
+    // ------------------------------------------------------------------------
+    // Reviews - Simplified Access
+    // ------------------------------------------------------------------------
+    match /reviews/{reviewId} {
+      allow read: if true;
+      // Any signed-in user can create, update, or delete any review.
+      allow write: if isSignedIn();
+    }
+
+    // ------------------------------------------------------------------------
+    // Bucket Lists - Simplified Access
+    // ------------------------------------------------------------------------
+     match /bucketLists/{bucketListId} {
+      // Any signed-in user can manage bucket list items.
+      allow read, write: if isSignedIn();
+      allow list: if isSignedIn();
+    }
+    
+    // ------------------------------------------------------------------------
+    // Admin-Managed Content (Products, Groups) - Unchanged
+    // ------------------------------------------------------------------------
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update: if isAdmin();
+      allow delete: if getOwnerClaim(); // Only owner can delete directly
+    }
+
+    match /countryGroups/{groupId} {
+      allow read: if true;
+      allow create, update: if isAdmin();
+      allow delete: if getOwnerClaim(); // Only owner can delete directly
+    }
+
+    // ------------------------------------------------------------------------
+    // Deletion Requests (New) - Unchanged
+    // ------------------------------------------------------------------------
+    match /deletionRequests/{requestId} {
+        allow create: if isAdmin(); // Admins can create requests
+        allow read, list: if getOwnerClaim(); // Owner can manage requests
+        allow update, delete: if getOwnerClaim();
+    }
+    
+    // ------------------------------------------------------------------------
+    // User Profile Rules - Unchanged
+    // ------------------------------------------------------------------------
+    match /users/{userId} {
+      allow get: if true;
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId) && 
+                      !('followersCount' in request.resource.data) &&
+                      !('followingCount' in request.resource.data) &&
+                      !('isAdmin' in request.resource.data);
+      allow delete: if getOwnerClaim();
+
+      // --- Subcollections ---
+      match /followers/{followerId} {
+        allow read: if true;
+        allow write: if isOwner(followerId) || getOwnerClaim();
+      }
+       match /following/{followedId} {
+        allow read: if true;
+        allow write: if isOwner(userId) || getOwnerClaim();
+      }
+    }
+    
+    // Allow any authenticated user to query the users collection for search.
+    match /users/{userId=**} {
+      allow list: if isSignedIn();
+    }
+  }
+}

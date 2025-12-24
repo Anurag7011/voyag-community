@@ -1,0 +1,76 @@
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isContentOwner() {
+      return request.auth.uid == request.resource.data.user.id;
+    }
+    
+    function wasContentOwner() {
+      return request.auth.uid == resource.data.user.id;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    // Public collections can be read by anyone
+    match /locations/{locationId} {
+      allow read: if true;
+      allow create: if isSignedIn() && isContentOwner();
+      allow update: if isSignedIn() && wasContentOwner();
+      allow delete: if isSignedIn() && (wasContentOwner() || isAdmin());
+    }
+
+    match /events/{eventId} {
+      allow read: if true;
+      allow create: if isSignedIn() && isContentOwner();
+      allow update: if isSignedIn() && wasContentOwner();
+      allow delete: if isSignedIn() && (wasContentOwner() || isAdmin());
+    }
+
+    match /products/{productId} {
+      allow read: if true;
+      // Only admins can create, update, or delete products.
+      allow write: if isAdmin();
+    }
+    
+    match /countryGroups/{groupId} {
+      allow read: if true;
+      // Only admins can create, update, or delete groups.
+      allow write: if isAdmin();
+    }
+
+    // User profiles
+    match /users/{userId} {
+      // Anyone can view a user's public profile.
+      allow get: if true;
+      
+      // A user can create, update, or delete their own profile.
+      allow create, update, delete: if isOwner(userId);
+
+      // --- Subcollections ---
+      match /followers/{followerId} {
+        allow read: if true;
+        // A user can decide to follow/unfollow another user.
+        allow write: if isOwner(followerId);
+      }
+    }
+    
+    // This rule allows any authenticated user to perform queries (list) on the users collection.
+    // It's necessary for the user search functionality.
+    match /users/{userId=**} {
+      allow list: if isSignedIn();
+    }
+  }
+}

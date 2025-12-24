@@ -1,0 +1,307 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the WanderHub application.",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "User's unique ID from Firebase Authentication."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User's name (e.g., 'John Doe')."
+        },
+        "username": {
+          "type": "string",
+          "description": "Unique username (e.g., 'john.travels')."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's email."
+        },
+        "avatarUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to their profile picture stored in Cloud Storage."
+        },
+        "bio": {
+          "type": "string",
+          "description": "Short user biography."
+        },
+        "travelInterests": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "A list of the user's travel interests."
+        },
+        "followersCount": {
+          "type": "number",
+          "description": "Count of users who are following this user."
+        },
+        "followingCount": {
+          "type": "number",
+          "description": "Count of users this user is following."
+        },
+        "isAdmin": {
+            "type": "boolean",
+            "description": "Flag for admin panel access."
+        },
+        "createdAt": {
+            "type": "string",
+            "format": "date-time"
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "email",
+        "followersCount",
+        "followingCount",
+        "createdAt"
+      ]
+    },
+    "Follow": {
+        "title": "Follow",
+        "type": "object",
+        "description": "Represents a follow relationship between two users.",
+        "properties": {
+            "followerUid": {
+                "type": "string"
+            },
+            "followedAt": {
+                "type": "string",
+                "format": "date-time"
+            }
+        }
+    },
+    "Location": {
+      "title": "Location",
+      "type": "object",
+      "description": "Represents a travel location submitted by a user.",
+      "properties": {
+        "caption": { "type": "string" },
+        "media": {
+            "type": "object",
+            "properties": {
+                "url": { "type": "string", "format": "uri" },
+                "type": { "type": "string", "enum": ["image", "video"] },
+                "hint": { "type": "string" },
+                "thumbnailUrl": { "type": "string", "format": "uri" }
+            },
+            "required": ["url", "type", "hint"]
+        },
+        "city": { "type": "string" },
+        "country": { "type": "string" },
+        "mapLink": { "type": "string", "format": "uri" },
+        "hashtags": { "type": "array", "items": { "type": "string" } },
+        "user": {
+            "type": "object",
+            "properties": {
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "avatar": {
+                    "type": "object",
+                    "properties": {
+                        "imageUrl": { "type": "string", "format": "uri" },
+                        "imageHint": { "type": "string" }
+                    },
+                    "required": ["imageUrl", "imageHint"]
+                }
+            },
+            "required": ["id", "name", "avatar"]
+        },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "reviews": { "type": "array", "items": { "type": "object" } },
+        "likes": { "type": "number" }
+      },
+      "required": ["caption", "media", "city", "country", "user", "createdAt"]
+    },
+    "Event": {
+      "title": "Event",
+      "type": "object",
+      "description": "Represents an event happening at a particular location.",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "media": {
+          "type": "object",
+            "properties": {
+                "url": { "type": "string", "format": "uri" },
+                "type": { "type": "string", "enum": ["image", "video"] },
+                "hint": { "type": "string" },
+                "thumbnailUrl": { "type": "string", "format": "uri" }
+            },
+            "required": ["url", "type", "hint"]
+        },
+        "date": { "type": "string", "format": "date" },
+        "time": { "type": "string" },
+        "place": { "type": "string" },
+        "user": {
+            "type": "object",
+            "properties": {
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "avatar": {
+                    "type": "object",
+                    "properties": {
+                        "imageUrl": { "type": "string", "format": "uri" },
+                        "imageHint": { "type": "string" }
+                    },
+                    "required": ["imageUrl", "imageHint"]
+                }
+            },
+            "required": ["id", "name", "avatar"]
+        },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "reviews": { "type": "array", "items": { "type": "object" } },
+        "likes": { "type": "number" }
+      },
+      "required": ["title", "description", "media", "date", "time", "place", "user", "createdAt"]
+    },
+    "Review": {
+        "title": "Review",
+        "type": "object",
+        "description": "A review for a location or event.",
+        "properties": {
+            "targetType": { "type": "string", "enum": ["location", "event"] },
+            "targetId": { "type": "string" },
+            "reviewerId": { "type": "string" },
+            "reviewerUsername": { "type": "string" },
+            "rating": { "type": "number" },
+            "comment": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["targetType", "targetId", "reviewerId", "reviewerUsername", "rating", "comment", "createdAt"]
+    },
+    "BucketList": {
+        "title": "BucketList",
+        "type": "object",
+        "description": "Links a user to a saved location or event.",
+        "properties": {
+            "userId": { "type": "string" },
+            "itemType": { "type": "string", "enum": ["location", "event"] },
+            "itemId": { "type": "string" },
+            "savedAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["userId", "itemType", "itemId", "savedAt"]
+    },
+    "CountryGroup": {
+      "title": "CountryGroup",
+      "type": "object",
+      "description": "Represents a country and its associated city groups.",
+      "properties": {
+        "countryName": { "type": "string" },
+        "flagEmoji": { "type": "string" },
+        "coverImageUrl": { "type": "string", "format": "uri" },
+        "cities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cityName": { "type": "string" },
+              "groupLink": { "type": "string", "format": "uri" }
+            },
+            "required": ["cityName", "groupLink"]
+          }
+        }
+      },
+      "required": ["countryName", "flagEmoji", "coverImageUrl", "cities"]
+    },
+    "Product": {
+      "title": "Product",
+      "type": "object",
+      "description": "Represents a product in the store.",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "brand": { "type": "string" },
+        "price": { "type": "number" },
+        "rating": { "type": "number" },
+        "category": { "type": "string" },
+        "media": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": { "type": "string", "format": "uri" },
+              "type": { "type": "string", "enum": ["image", "video"] },
+              "hint": { "type": "string" },
+              "thumbnailUrl": { "type": "string", "format": "uri" }
+            },
+            "required": ["url", "type", "hint"]
+          }
+        }
+      },
+      "required": ["name", "brand", "price", "rating", "category", "media", "description"]
+    },
+    "DeletionRequest": {
+      "title": "DeletionRequest",
+      "type": "object",
+      "description": "Represents a request from an admin to delete a piece of content.",
+      "properties": {
+        "targetId": { "type": "string" },
+        "targetType": { "type": "string", "enum": ["location", "event", "group", "product"] },
+        "targetContent": { "type": "object" },
+        "requesterId": { "type": "string" },
+        "requesterName": { "type": "string" },
+        "reason": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["targetId", "targetType", "targetContent", "requesterId", "requesterName", "reason", "status", "createdAt"]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous",
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Stores all public user profile information."
+    },
+    "/users/{userId}/followers/{followerId}": {
+      "schema": { "$ref": "#/entities/Follow" },
+      "description": "A subcollection under each user that tracks who is following them."
+    },
+    "/users/{userId}/following/{followedId}": {
+      "schema": { "$ref": "#/entities/Follow" },
+      "description": "A subcollection under each user that tracks who they are following."
+    },
+    "/locations/{locationId}": {
+      "schema": { "$ref": "#/entities/Location" },
+      "description": "Top-level collection for all user-submitted locations."
+    },
+    "/events/{eventId}": {
+      "schema": { "$ref": "#/entities/Event" },
+      "description": "Top-level collection for all user-submitted events."
+    },
+    "/reviews/{reviewId}": {
+        "schema": { "$ref": "#/entities/Review" },
+        "description": "Top-level collection for all reviews of locations and events."
+    },
+    "/bucketLists/{bucketListId}": {
+        "schema": { "$ref": "#/entities/BucketList" },
+        "description": "Top-level collection linking users to their saved items."
+    },
+    "/countryGroups/{countryGroupId}": {
+      "schema": { "$ref": "#/entities/CountryGroup" },
+      "description": "Top-level collection for organizing community groups by country."
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Top-level collection for all products available in the store."
+    },
+    "/deletionRequests/{requestId}": {
+      "schema": { "$ref": "#/entities/DeletionRequest" },
+      "description": "Stores admin requests to delete content, pending owner approval."
+    }
+  }
+}
+
+    

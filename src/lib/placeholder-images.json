@@ -1,0 +1,202 @@
+{
+  "placeholderImages": [
+    {
+      "id": "loc-1",
+      "description": "A hidden waterfall in a lush jungle.",
+      "imageUrl": "https://images.unsplash.com/photo-1625023455567-09b002682d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGlkZGVuJTIwd2F0ZXJmYWxsfGVufDB8fHx8MTc2NTQ0MjUwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hidden waterfall"
+    },
+    {
+      "id": "loc-2",
+      "description": "A colorful street in a historic European city.",
+      "imageUrl": "https://images.unsplash.com/photo-1619339163285-0b384b75b5e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMHN0cmVldHxlbnwwfHx8fDE3NjUzODQ3NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "colorful street"
+    },
+    {
+      "id": "loc-3",
+      "description": "A serene mountain lake at sunrise.",
+      "imageUrl": "https://images.unsplash.com/photo-1438382458652-54431bf59e01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW91bnRhaW4lMjBsYWtlfGVufDB8fHx8MTc2NTM1MTQ1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain lake"
+    },
+    {
+      "id": "loc-4",
+      "description": "A quirky bookstore in an old town.",
+      "imageUrl": "https://images.unsplash.com/photo-1703026306373-783f7fb0f9f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxxdWlya3klMjBib29rc3RvcmV8ZW58MHx8fHwxNzY1NDQyNTAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "quirky bookstore"
+    },
+    {
+      "id": "loc-5",
+      "description": "A panoramic view from a coastal cliff.",
+      "imageUrl": "https://images.unsplash.com/photo-1659539079868-28ed858cbbc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb2FzdGFsJTIwY2xpZmZ8ZW58MHx8fHwxNzY1Mzg4NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coastal cliff"
+    },
+    {
+      "id": "loc-6",
+      "description": "A bustling night market in Asia.",
+      "imageUrl": "https://images.unsplash.com/photo-1704908325720-1f8b2abb99b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxuaWdodCUyMG1hcmtldHxlbnwwfHx8fDE3NjU0NDI1MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "night market"
+    },
+    {
+      "id": "loc-7",
+      "description": "Ancient ruins in a desert landscape.",
+      "imageUrl": "https://images.unsplash.com/photo-1580102488613-fa55ab5de62a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhbmNpZW50JTIwcnVpbnN8ZW58MHx8fHwxNzY1MzM4NTM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ancient ruins"
+    },
+    {
+      "id": "loc-8",
+      "description": "A charming cafe on a cobblestone alley.",
+      "imageUrl": "https://images.unsplash.com/photo-1760243875503-e6a689f4f5a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaGFybWluZyUyMGNhZmV8ZW58MHx8fHwxNzY1NDQyNTAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "charming cafe"
+    },
+    {
+      "id": "evt-1",
+      "description": "A local music festival in a park.",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtdXNpYyUyMGZlc3RpdmFsfGVufDB8fHx8MTc2NTM3NzgwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "music festival"
+    },
+    {
+      "id": "evt-2",
+      "description": "A traditional lantern festival at night.",
+      "imageUrl": "https://images.unsplash.com/photo-1613625695262-98bceeda4bc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsYW50ZXJuJTIwZmVzdGl2YWx8ZW58MHx8fHwxNzY1NDM2OTMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lantern festival"
+    },
+    {
+      "id": "evt-3",
+      "description": "A farmers market with fresh local produce.",
+      "imageUrl": "https://images.unsplash.com/photo-1567306295427-94503f8300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmYXJtZXJzJTIwbWFya2V0fGVufDB8fHx8MTc2NTMzNDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "farmers market"
+    },
+    {
+      "id": "evt-4",
+      "description": "An open-air art exhibition.",
+      "imageUrl": "https://images.unsplash.com/photo-1503293050619-6048ffad0dc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhcnQlMjBleGhpYml0aW9ufGVufDB8fHx8MTc2NTM0ODEzNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art exhibition"
+    },
+    {
+      "id": "user-1",
+      "description": "Avatar for Alex Johnson.",
+      "imageUrl": "https://images.unsplash.com/photo-1636377985931-898218afd306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjUzOTM4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "user-2",
+      "description": "Avatar for Maria Garcia.",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NTQzNjIwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "user-3",
+      "description": "Avatar for Kenji Tanaka.",
+      "imageUrl": "https://images.unsplash.com/photo-1665832102447-a853788f620c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjB0cmF2ZWx8ZW58MHx8fHwxNzY1Mzg3OTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man travel"
+    },
+    {
+      "id": "user-4",
+      "description": "Avatar for Chloe Dubois.",
+      "imageUrl": "https://images.unsplash.com/photo-1488577198268-201003f53f79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMGhpa2luZ3xlbnwwfHx8fDE3NjUzODAwMjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman hiking"
+    },
+    {
+      "id": "user-avatar-main",
+      "description": "Main user avatar.",
+      "imageUrl": "https://images.unsplash.com/photo-1635131902146-6957477a4ff4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2NTQxNTMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "group-italy",
+      "description": "Image for Italy group.",
+      "imageUrl": "https://images.unsplash.com/photo-1515855656108-775585b4f62b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxJdGFseXxlbnwwfHx8fDE3NjU1NjYyMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Italy landscape"
+    },
+    {
+      "id": "group-japan",
+      "description": "Image for Japan group.",
+      "imageUrl": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxKYXBhbnxlbnwwfHx8fDE3NjU1NjYyMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Japan street"
+    },
+    {
+      "id": "group-thailand",
+      "description": "Image for Thailand group.",
+      "imageUrl": "https://images.unsplash.com/photo-1563492065599-3520f775ee0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxUaGFpbGFuZHxlbnwwfHx8fDE3NjU1NjYyMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Thailand temple"
+    },
+    {
+      "id": "group-portugal",
+      "description": "Image for Portugal group.",
+      "imageUrl": "https://images.unsplash.com/photo-1563603350284-6334c004944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxQb3J0dWdhbHxlbnwwfHx8fDE3NjU1NjYyMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Portugal coast"
+    },
+    {
+      "id": "group-canada",
+      "description": "Image for Canada group.",
+      "imageUrl": "https://images.unsplash.com/photo-1517935706615-2717063c2225?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxDYW5hZGF8ZW58MHx8fHwxNzY1NTY2MjE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Canada mountains"
+    },
+    {
+      "id": "group-czech",
+      "description": "Image for Czech Republic group.",
+      "imageUrl": "https://images.unsplash.com/photo-1519669556878-63bd5de443bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxQcmFndWV8ZW58MHx8fHwxNzY1NTY2MjE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Prague city"
+    },
+    {
+      "id": "group-ireland",
+      "description": "Image for Ireland group.",
+      "imageUrl": "https://images.unsplash.com/photo-1547782534-11a37c356e87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxJcmVsYW5kfGVufDB8fHx8MTc2NTU2NjIxNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Ireland cliffs"
+    },
+    {
+      "id": "group-jordan",
+      "description": "Image for Jordan group.",
+      "imageUrl": "https://images.unsplash.com/photo-1551892644-51a4e1d9759d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxKb3JkYW58ZW58MHx8fHwxNzY1NTY2MjE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Jordan desert"
+    },
+    {
+      "id": "prod-1",
+      "description": "A durable waterproof backpack.",
+      "imageUrl": "https://images.unsplash.com/photo-1577984890956-f04a431a4734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3YXRlcnByb29mJTIwYmFja3BhY2t8ZW58MHx8fHwxNzY5MDQyMTMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "waterproof backpack"
+    },
+    {
+      "id": "prod-2",
+      "description": "A compact multi-tool for travelers.",
+      "imageUrl": "https://images.unsplash.com/photo-1610173826279-0b62458a2c26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtdWx0aSUyMHRvb2x8ZW58MHx8fHwxNzY5MDQyMTMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "multi tool"
+    },
+    {
+      "id": "prod-3",
+      "description": "Compression cubes for packing.",
+      "imageUrl": "https://images.unsplash.com/photo-1696048834241-79753123b371?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYWNraW5nJTIwY3ViZXN8ZW58MHx8fHwxNzY5MDQyMTMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "packing cubes"
+    },
+    {
+      "id": "prod-4",
+      "description": "A universal travel adapter.",
+      "imageUrl": "https://images.unsplash.com/photo-1620391444988-a0280436d289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzYWwlMjBhZGFwdGVyfGVufDB8fHx8MTc2OTA0MjEzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "universal adapter"
+    },
+    {
+      "id": "prod-5",
+      "description": "Comfortable merino wool socks.",
+      "imageUrl": "https://images.unsplash.com/photo-1606114249920-5e4069837965?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZXJpbm8lMjB3b29sJTIwc29ja3N8ZW58MHx8fHwxNzY5MDQyMTMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "merino socks"
+    },
+    {
+      "id": "prod-6",
+      "description": "A collapsible water bottle.",
+      "imageUrl": "https://images.unsplash.com/photo-1623191391942-3a55177b9f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2xsYXBzaWJsZSUyMHdhdGVyJTIwYm90dGxlfGVufDB8fHx8MTc2OTA0MjEzMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "collapsible bottle"
+    },
+    {
+      "id": "prod-7",
+      "description": "A quick-dry travel towel.",
+      "imageUrl": "https://images.unsplash.com/photo-1631728362632-15a05b327572?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxxdWljayUyMGRyeSUyMHRvd2VsfGVufDB8fHx8MTc2OTA0MjEzMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "quick-dry towel"
+    },
+    {
+      "id": "prod-8",
+      "description": "A noise-cancelling travel pillow.",
+      "imageUrl": "https://images.unsplash.com/photo-1575793699818-a6e7f4f2c53d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBwaWxsb3d8ZW58MHx8fHwxNzY5MDQyMTMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "travel pillow"
+    }
+  ]
+}
